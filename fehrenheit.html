@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fehrenheit</title>
+</head>
+<body>
+    
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi perspiciatis officiis, veniam officia blanditiis sed!</p>
+
+    <p id="fc"></p>
+
+    <script>
+        function toCelsius(f){
+            return (5/9)*(f-32);
+        }
+        let value = toCelsius(9);    
+        document.getElementById('fc').innerHTML = value;
+    </script>
+
+</body>
+</html>

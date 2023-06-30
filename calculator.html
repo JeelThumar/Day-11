@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>calculator</title>
+    <link rel="stylesheet" href="cal.css">
+   
+
+</head>
+<body>
+    
+    <h3>Calculator</h3>
+
+    <div class="container">
+        <table id="cal">
+            <tr>
+                <td>
+                <input class="input" id="result" type="text" readonly>
+                </td>
+                <td>
+                <div onclick="clearR()" class="a1 a2"><i class="fa-solid fa-delete-left"></i></div>
+                </td>
+            </tr>
+        </table>
+
+        <table id="cal">    
+            <tr>
+                <td>    
+                    <div onclick="append('1')" class="a1">1</div>
+                </td>
+                <td>
+                    <div onclick="append('2')"  class="a1">2</div>
+                </td>
+                <td>
+                    <div onclick="append('3')"  class="a1">3</div>
+                </td>
+                <td>
+                    <div onclick="append('/')"  class="a1">/</div>
+                </td>    
+            </tr>
+            <tr>    
+                <td>
+                    <div onclick="append('4')"  class="a1">4</div>
+                </td> 
+                <td>
+                    <div onclick="append('5')"  class="a1">5</div>
+                </td>   
+                <td>
+                    <div onclick="append('6')"  class="a1">6</div>
+                </td>
+                <td>
+                    <div onclick="append('*')"   class="a1">*</div>
+                </td>  
+            </tr>
+            <tr>    
+                <td>
+                    <div onclick="append('7')"  class="a1">7</div>
+                </td>
+                <td>
+                    <div onclick="append('8')"  class="a1">8</div>
+                </td>
+                <td>
+                    <div onclick="append('9')"  class="a1">9</div>
+                </td>
+                <td>
+                    <div onclick="append('+')"  class="a1">+</div>
+                </td>
+            </tr>
+                <td>
+                    <div onclick="append('0')"  class="a1">0 </div>
+                </td>
+                <td>
+                    <div onclick="append('.')"  class="a1">. </div>
+                </td>
+                <td>
+                    <div onclick="append('-')"  class="a1">- </div>
+                </td>
+                <td>
+                    <div onclick="calculate('=')"  class="a1 a3">= </div>
+                </td>
+               
+        </table>
+    </div> 
+   
+    <script>
+        function append(element){
+            document.getElementById("result").value += element;
+        }
+        function calculate(){
+            var a = document.getElementById("result").value;
+            var res = eval(a);
+            document.getElementById("result").value = res;
+        }
+        function clearR(){
+            var a = document.getElementById("result").value;
+            document.getElementById("result").value = a.slice(0, a.length-1);
+        }
+
+    </script>
+    
+
+</body>
+</html>
